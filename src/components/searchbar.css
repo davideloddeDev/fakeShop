@@ -1,0 +1,24 @@
+.container-searchbar {
+    margin-top: 0 !important;
+}
+
+.container-searchbar .row {
+    width: 50vw;
+}
+
+.container-searchbar .btn {
+    width: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border-color: transparent;
+    
+}
+.iconButton {
+    /* colore blu: #2c6efd */
+    width: 6vw;
+    margin: -1vw;
+    
+}
+
