@@ -1,0 +1,15 @@
+.divCategory {
+    width: 25vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    margin-bottom: 30px;
+}
+
+.divCategory h2 {
+    color: #fff;
+    text-shadow: 1px 1px #000;
+}
