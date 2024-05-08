@@ -1,0 +1,6 @@
+.container-prodotti {
+    width: 70vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+}

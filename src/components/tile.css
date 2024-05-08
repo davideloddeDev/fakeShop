@@ -13,3 +13,9 @@
     color: #fff;
     text-shadow: 1px 1px #000;
 }
+
+.card-product {
+    width: 20vw;
+    display: flex;
+    align-items: center;
+}

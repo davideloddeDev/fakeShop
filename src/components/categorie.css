@@ -1,7 +1,23 @@
-.tile-category {
-    width: 90vw;
-    display: flex;
-    flex-direction: row;
-    gap: 2vw;
-    margin: 0 5vw;
+.container-categorie {
+    width: 30vw;
+}
+
+.categorie {
+    margin: 20px;
+    background-color: transparent;
+    border-radius: 17px;
+    
+}
+
+.categorie:hover {
+    background-color: #2f247269;
+}
+
+.categoria {
+    color: rgb(75, 71, 88);
+    font-size: 20px;
+}
+
+.categoria:hover {
+    color: #fff;
 }

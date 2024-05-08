@@ -2,7 +2,6 @@ import "./header.css";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Searchbar } from "./components/Searchbar";
 
 export function Header() {
@@ -19,15 +18,10 @@ export function Header() {
             <Nav className="me-auto">
               
               <Searchbar />
-              <NavDropdown title="Categorie" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#">Elettronica</NavDropdown.Item>
-                <NavDropdown.Item href="#">Gioielleria</NavDropdown.Item>
-                <NavDropdown.Item href="#">Abbigliamento Uomo</NavDropdown.Item>
-                <NavDropdown.Item href="#">Abbigliamento Donna</NavDropdown.Item>
-                
-                
-                
-              </NavDropdown>
+              <Nav.Link href="#home">
+                <img src="ic_cart.svg" width="24" height="24" className="d-inline-block align-top" alt="" />
+                <a>carrello</a>
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
