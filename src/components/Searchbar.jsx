@@ -15,7 +15,7 @@ export function Searchbar() {
             >
                 
             </Form.Control>
-            <Button>
+            <Button href="/carrello">
               <img className="iconButton" src="ic_search.svg" alt="search" />
             </Button>
           </Form>

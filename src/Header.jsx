@@ -9,7 +9,7 @@ export function Header() {
     <div className="header">
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
             <img src="vite.svg" width="30" height="30" className="d-inline-block align-top" alt="" />
             Nome Azienda
           </Navbar.Brand>
@@ -18,7 +18,7 @@ export function Header() {
             <Nav className="me-auto">
               
               <Searchbar />
-              <Nav.Link href="#home">
+              <Nav.Link href="/carrello">
                 <img src="ic_cart.svg" width="24" height="24" className="d-inline-block align-top" alt="" />
                 <a>carrello</a>
               </Nav.Link>
