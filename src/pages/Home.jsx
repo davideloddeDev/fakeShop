@@ -5,6 +5,7 @@ import "../components/categorie.css";
 
 export function Home() {
   const [categorie, setCategorie] = useState(null);
+  const [search, setSearch] = useState(null);
   const [categoriaSelezionata, setCategoriaSelezionata] = useState(null);
 
   useEffect(() => {
@@ -12,8 +13,11 @@ export function Home() {
       .then(res => res.json())
       .then(json => {
         setCategorie(json);
+        setSearch(localStorage.getItem("search"));
       });
-  }, []);
+      console.log("search home", search);
+
+  }, [search]);
 
   const handleCategoriaClick = (categoria) => {
     setCategoriaSelezionata(categoria);
@@ -36,7 +40,7 @@ export function Home() {
             )
           : <p>Caricamento...</p>}
       </div>
-      <Prodotti categorie={categoriaSelezionata} />
+      <Prodotti categorie={categoriaSelezionata} search={search} />
     </div>
   );
 }

@@ -1,35 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import './prodotti.css';
-import TileProduct from './TileProduct';
+import React, { useState, useEffect } from "react";
+import "./prodotti.css";
+import TileProduct from "./TileProduct";
 
-function Prodotti({ categorie }) {
+function Prodotti({ categorie, search }) {
   const [prodotti, setProdotti] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchProdotti = async () => {
-      setIsLoading(true);
-      setError(null);
+  useEffect(
+    () => {
+      console.log("search", search);
+      const fetchProdotti = async () => {
+        setIsLoading(true);
+        setError(null);
 
-      try {
-        const categoria = categorie
-          ? `https://fakestoreapi.com/products/category/${categorie}`
-          : 'https://fakestoreapi.com/products';
+        try {
+          const categoria = categorie
+            ? `https://fakestoreapi.com/products/category/${categorie}`
+            : search
+            ? `https://fakestoreapi.com/products?sort=${search}`
+            : "https://fakestoreapi.com/products";
 
-        const response = await fetch(categoria);
-        const data = await response.json();
+          const response = await fetch(categoria);
+          const data = await response.json();
+          console.log("prodotti", data);
 
-        setProdotti(data);
-      } catch (error) {
-        setError('Errore durante il caricamento dei prodotti');
-      } finally {
-        setIsLoading(false);
-      }
-    };
+          setProdotti(data);
+        } catch (error) {
+          setError("Errore durante il caricamento dei prodotti");
+        } finally {
+          setIsLoading(false);
+        }
+      };
 
-    fetchProdotti();
-  }, [categorie]);
+      fetchProdotti();
+    },
+    [categorie, search]
+  );
 
   useEffect(() => {
     return () => {
@@ -39,21 +46,21 @@ function Prodotti({ categorie }) {
 
   return (
     <div className="container-prodotti">
-      {isLoading ? (
-        <p>Caricamento...</p>
-      ) : error ? (
-        <p>{error}</p>
-      ) : (
-        prodotti.map((prodotto) => (
-          <TileProduct
-            key={prodotto.id}
-            titleProduct={prodotto.title}
-            descriptionProduct={prodotto.description}
-            imageProduct={prodotto.image}
-            priceProduct={prodotto.price}
-          />
-        ))
-      )}
+      {isLoading
+        ? <p>Caricamento...</p>
+        : error
+          ? <p>
+              {error}
+            </p>
+          : prodotti.map(prodotto =>
+              <TileProduct
+                key={prodotto.id}
+                titleProduct={prodotto.title}
+                descriptionProduct={prodotto.description}
+                imageProduct={prodotto.image}
+                priceProduct={prodotto.price}
+              />
+            )}
     </div>
   );
 }

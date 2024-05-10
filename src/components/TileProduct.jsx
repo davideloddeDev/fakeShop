@@ -10,7 +10,7 @@ export default function TileProduct({ titleProduct, descriptionProduct, imagePro
     imageProduct,
     priceProduct,
   };
-  console.log(`prezzo: € ${prezzo}`) 
+  
 
   function handleClick() {
     alert("Added to cart!");
