@@ -5,6 +5,11 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Searchbar } from "./components/Searchbar";
 
 export function Header() {
+
+  function disabledFunction() {
+    alert("questo ecommerce è un'applicazione demo, non è possibile eseguire il login o registrarsi");
+  }
+
   return (
     <div className="header">
       <Navbar expand="lg" className="bg-body-tertiary">
@@ -21,6 +26,10 @@ export function Header() {
               <Nav.Link href="/carrello">
                 <img src="ic_cart.svg" width="24" height="24" className="d-inline-block align-top" alt="" />
                 <a>carrello</a>
+              </Nav.Link>
+              <Nav.Link onClick={disabledFunction}>
+                <img src="ic_cart.svg" width="24" height="24" className="d-inline-block align-top" alt="" />
+                <a>Admin</a>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
