@@ -1,0 +1,44 @@
+.main-payment {
+    height: 81vh;
+}
+
+.payment-method input {
+    margin: 0 15px;
+    margin-right: 5px;
+}
+
+.card-top, .card-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    height: 90px;
+}
+
+.card-center {
+    display: flex;
+    flex-direction: row;
+    height: 90px;
+}
+
+.mb-3 {
+    text-align: left;
+}
+
+.mb-3 label {
+    margin-left: 5px;
+}
+
+.mb-3 input {
+    border-radius: 17px;
+}
+
+.btn-send {
+    background-color: #000;
+    color: #fff;
+    border-radius: 17px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

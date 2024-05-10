@@ -1,0 +1,44 @@
+.main-carrello {
+    display: flex;
+    flex-direction: row;
+}
+.main-carrello div {
+    padding: 20px;
+    
+    
+}
+
+.container-payment {
+    /* background-color: #ff0000; */
+    
+}
+
+.container-summary {
+    /* background-color: #0000ff; */
+    
+}
+
+@media screen and (min-width: 1500px) {
+   .main-carrello {
+        flex-direction: row;
+    }
+    .container-payment {
+        width: 60vw;
+    }
+    .container-summary {
+        width: 40vw;
+    }
+    
+}
+@media screen and (max-width: 1499px) {
+    .main-carrello {
+         flex-direction: column;
+     }
+     .container-payment {
+        width: 100vw;
+    }
+    .container-summary {
+        width: 100vw;
+    }
+     
+ }
